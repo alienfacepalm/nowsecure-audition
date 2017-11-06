@@ -1,8 +1,9 @@
 1) Within the root directory run `npm install`
 2) Run `npm start`
-3) Navigate to http://localhost:3000 in your browser
-4) Navigate to the "server" directory and run `npm install`
-5) Run `node index.js`
+3) Navigate to the "server" directory and run `npm install`
+4) Run `node index.js`
+5) Navigate to http://localhost:3000 in your browser
+6) Click a row for it's result details
 
 
 =====================================================================
