@@ -54,8 +54,7 @@ class App extends Component {
             columns={columns}
             getTdProps={(state, rowInfo, column, instance) => {
               return {
-                onClick: (e) => {
-                  console.log(rowInfo);
+                onClick: () => {
                   this.setState({details: report.tests[rowInfo.index]})
                 }
               }
@@ -63,7 +62,9 @@ class App extends Component {
           />
         </div>
         <div>
-          <Details data={this.state.details} />
+          {this.state.details &&
+            <Details data={this.state.details}/>
+          }
         </div>
       </div>
     );

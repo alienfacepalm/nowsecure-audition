@@ -7,7 +7,7 @@ const Details = props => {
 
   return (
     <div id="details">
-      {data &&
+      {data && data.length > 0 &&
       <div>
         <h4>Data</h4>
         <ul>
@@ -16,7 +16,7 @@ const Details = props => {
       </div>
       }
 
-      {fields &&
+      {fields && fields.length > 0 &&
       <div>
         <h4>Fields</h4>
         <ul>
@@ -25,7 +25,7 @@ const Details = props => {
       </div>
       }
 
-      {regulatory &&
+      {regulatory && regulatory.length > 0 &&
       <div>
         <h4>Regulatory</h4>
         <ul>

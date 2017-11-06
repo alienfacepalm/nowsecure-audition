@@ -1,3 +1,13 @@
+1) Within the root directory run `npm install`
+2) Run `npm start`
+3) Navigate to http://localhost:3000 in your browser
+
+
+=====================================================================
+TASK
+=====================================================================
+
+
 MobPen is a security company that analyzes mobile apps such as android and ios
 for security vulnerabilities. The security analysis generates a JSON file that
 defines list of tests that were ran. The meta-data about these tests such as
