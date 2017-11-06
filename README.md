@@ -1,5 +1,5 @@
-This uses a basic express server to read the json files, merge and sort them on the backend upon request.
-It then delivers to 
+This uses a basic express server to read the json files, merge and sort, and save to disk.
+It then reads that file and delivers it to the client for display.
 
 
 1) In terminal 1, within the root directory run `npm install`
