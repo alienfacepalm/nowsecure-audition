@@ -1,0 +1,34 @@
+{
+  "name": "nowsecure-audition",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "moment": "^2.19.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-table": "^6.7.4",
+    "react-treebeard": "^2.1.0"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "description": "MobPen is a security company that analyzes mobile apps such as android and ios for security vulnerabilities. The security analysis generates a JSON file that defines list of tests that were ran. The meta-data about these tests such as test description, severity, vulnerable flag, score, regulatory links, etc. are defined in a specification JSON file. Both of these JSON files are merged together to generate a unified JSON file that has all the test data from analysis and metadata from specification file. This generated JSON file is then used to create an HTML or PDF report, which displays vulnerable tests first ordered by the score (from highest to lowest) and then non-vulnerable tests (also ordered from highest to lowest score).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alienfacepalm/nowsecure-audition.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alienfacepalm/nowsecure-audition/issues"
+  },
+  "homepage": "https://github.com/alienfacepalm/nowsecure-audition#readme"
+}

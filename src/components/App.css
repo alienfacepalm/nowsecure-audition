@@ -1,0 +1,26 @@
+html, body {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ReactTable {
+  text-align: left;
+  height: 400px;
+}
+
+.ReactTable ul {
+  list-style: none;
+}
+
+.rt-td:hover {
+  cursor: pointer;
+}
+
+#details {
+  margin: 20px auto;
+  padding: 5px;
+  width: 75%;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  text-align: left;
+}
