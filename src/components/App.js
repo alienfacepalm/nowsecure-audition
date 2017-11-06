@@ -6,17 +6,16 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import './App.css';
 
-import report from '../data/com.xyz.app.json';
-import spec from '../data/specs.json'
 import columns from './columns';
 import Details from './details';
 
 class App extends Component {
 
-  constructor(){
-    super();
+  constructor(...args){
+    super(...args);
     
     this.state = {
+      report: {},
       details: {
         data: null,
         fields: null,
@@ -26,20 +25,18 @@ class App extends Component {
   }
   
   async componentWillMount(){
-    await this.mergeAndSort();
+      await this.fetchReport();
   }
 
-  mergeAndSort(){
-    const tests = [];
-    const keys = Object.keys(report.tests);
-    keys.forEach(key => tests.push({key: key, ...report.tests[key], ...spec[key]}));
-    tests
-      .sort((a, b) => a.score < b.score)
-      .sort((a, b) => !a.vulnerable && b.vulnerable);
-    report.tests = tests;
+  async fetchReport(){
+    let response = await fetch('http://localhost:3001/report');
+    let report = await response.json();
+    this.setState({report: report});
   }
 
   render() {
+    const {report} = this.state;
+
     return (
       <div id="report">
         <div>
@@ -47,19 +44,21 @@ class App extends Component {
           <p>{report.id} | {report.platform} | {moment(new Date(report.createdDate)).format('MM-DD-YYYY HH:mm:ss')}</p>
         </div>
         <div>
-          <ReactTable
-            className="-highlight"
-            defaultPageSize={10}
-            data={report.tests}
-            columns={columns}
-            getTdProps={(state, rowInfo, column, instance) => {
-              return {
-                onClick: () => {
-                  this.setState({details: report.tests[rowInfo.index]})
+          {report.tests && report.tests.length &&
+            <ReactTable
+              className="-highlight"
+              defaultPageSize={10}
+              data={report.tests}
+              columns={columns}
+              getTdProps={(state, rowInfo, column, instance) => {
+                return {
+                  onClick: () => {
+                    this.setState({details: report.tests[rowInfo.index]})
+                  }
                 }
-              }
-            }}
-          />
+              }}
+            />
+          }
         </div>
         <div>
           {this.state.details &&
