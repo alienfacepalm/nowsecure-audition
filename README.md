@@ -1,3 +1,7 @@
+This uses a basic express server to read the json files, merge and sort them on the backend upon request.
+It then delivers to 
+
+
 1) In terminal 1, within the root directory run `npm install`
 2) Run `npm start`
 3) In terminal 2, navigate to the "server" directory and run `npm install`

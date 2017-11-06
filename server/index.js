@@ -13,7 +13,15 @@ app.use(function(req, res, next) {
 app.get('/report', (req, res) => {
   const report = JSON.parse(fs.readFileSync('data/com.xyz.app.json', 'utf8'));
   const spec = JSON.parse(fs.readFileSync('data/specs.json', 'utf8'));
-  res.send(JSON.stringify(mergeAndSort(report, spec)));
+
+  fs.writeFile('data/finalReport.json', JSON.stringify(mergeAndSort(report, spec)), (err) => {
+    if(err){
+      res.status(500).send({ error: "File failed to be written"})
+    }
+    const file = fs.readFileSync('data/finalReport.json', 'utf8');
+    res.send(file);
+  })
+
 });
 
 app.listen(3001)

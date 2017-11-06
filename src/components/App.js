@@ -31,7 +31,11 @@ class App extends Component {
   async fetchReport(){
     let response = await fetch('http://localhost:3001/report');
     let report = await response.json();
-    this.setState({report: report});
+    if(report.error){
+      console.log(report.error);
+    }else{
+      this.setState({report: report});
+    }
   }
 
   render() {
