@@ -57,7 +57,9 @@ class App extends Component {
               getTdProps={(state, rowInfo) => {
                 return {
                   onClick: () => {
-                    this.setState({details: report.tests[rowInfo.index]})
+                    if(rowInfo){
+                      this.setState({details: report.tests[rowInfo.index]});
+                    }
                   }
                 }
               }}
