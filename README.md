@@ -1,7 +1,7 @@
 This uses a basic express server to read the json files, merge and sort, and save to disk.
 It then reads that file and delivers it to the client for display.
 
-To run you need open 2 terminals, NodeJS 7+ installed with NPM. 
+To run you need open 2 terminals, NodeJS 7.6+ installed with NPM (or configure babel).
 
 1) In terminal 1, within the root directory run `npm install`
 2) Run `npm start`
