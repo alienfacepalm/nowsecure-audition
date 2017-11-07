@@ -54,7 +54,7 @@ class App extends Component {
               defaultPageSize={10}
               data={report.tests}
               columns={columns}
-              getTdProps={(state, rowInfo, column, instance) => {
+              getTdProps={(state, rowInfo) => {
                 return {
                   onClick: () => {
                     this.setState({details: report.tests[rowInfo.index]})
